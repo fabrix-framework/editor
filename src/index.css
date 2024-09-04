@@ -1,0 +1,55 @@
+@import "graphiql/graphiql.css";
+@import "@graphiql/plugin-explorer/dist/style.css";
+@import "./columns.css";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.monaco-editor .line-numbers {
+  /* Fix a style bug that line numbers are corrupted */
+  width: auto !important;
+}
+
+.graphiql-container {
+  font-size: 13px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+  border-radius: 3px;
+}
+
+.graphiql-container .graphiql-editors {
+  border-radius: 0;
+}
+
+.graphiql-container .graphiql-editor .CodeMirror {
+  font-size: 13px;
+}
+
+.graphiql-container .graphiql-sessions {
+  margin: 0;
+  border-radius: 0;
+  background-color: inherit;
+}
+
+.graphiql-container .graphiql-session {
+  padding: 0;
+}
+
+.graphiql-container .graphiql-session-header {
+  display: none;
+}
+
+.graphiql-container .graphiql-query-editor {
+  padding: var(--px-10);
+}
+
+.graphiql-container .graphiql-editors.full-height {
+  margin-top: 0;
+}
+
+#graphiql-session > *:not(:first-child) {
+  display: none !important;
+}
