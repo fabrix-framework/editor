@@ -2,7 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-  # workflow_dispatch:
+    branches: ["main"]
+    paths:
+      - public/**
+      - src/**
+      - .github/workflows/deployment.yml
+      - pnpm-lock.yaml
+      - index.html
+      - vite.config.ts
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
