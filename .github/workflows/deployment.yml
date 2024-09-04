@@ -16,6 +16,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  VITE_GRAPHQL_ENDPOINT_URL: ${{ vars.VITE_GRAPHQL_ENDPOINT_URL }}
+
 jobs:
   deploy:
     environment:
