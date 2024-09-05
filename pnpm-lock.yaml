@@ -21,22 +21,8 @@ importers:
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
       '@fabrix-framework/chakra-ui':
-<<<<<<< HEAD
-<<<<<<< HEAD
-        specifier: 0.1.0
-        version: 0.1.0(zjfasndjpwxvesy6j3swbgtdzi)
-||||||| parent of 0f171e1 (Use preview version of ImagePreview)
-=======
-        specifier: 0.1.1-preview.1
-        version: 0.1.1-preview.1(zjfasndjpwxvesy6j3swbgtdzi)
->>>>>>> 0f171e1 (Use preview version of ImagePreview)
-||||||| parent of 1da5210 (Use chakra-ui preview.2)
-        specifier: 0.1.1-preview.1
-        version: 0.1.1-preview.1(zjfasndjpwxvesy6j3swbgtdzi)
-=======
         specifier: 0.1.1-preview.2
         version: 0.1.1-preview.2(zjfasndjpwxvesy6j3swbgtdzi)
->>>>>>> 1da5210 (Use chakra-ui preview.2)
       '@fabrix-framework/fabrix':
         specifier: 0.1.1-preview.1
         version: 0.1.1-preview.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
