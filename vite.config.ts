@@ -11,4 +11,5 @@ export default defineConfig({
   build: {
     sourcemap: process.env.NODE_ENV === "development",
   },
+  base: process.env.GITHUB_PAGES ? "editor" : "./",
 });
