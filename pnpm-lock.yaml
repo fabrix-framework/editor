@@ -38,8 +38,8 @@ importers:
         version: 0.1.1-preview.2(zjfasndjpwxvesy6j3swbgtdzi)
 >>>>>>> 1da5210 (Use chakra-ui preview.2)
       '@fabrix-framework/fabrix':
-        specifier: 0.1.1-preview.0
-        version: 0.1.1-preview.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.1.1-preview.1
+        version: 0.1.1-preview.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@fabrix-framework/graphql-config':
         specifier: 0.1.0
         version: 0.1.0
@@ -987,6 +987,13 @@ packages:
 
   '@fabrix-framework/fabrix@0.1.1-preview.0':
     resolution: {integrity: sha512-82UhNhsfT3P3gOVMPAgI5uTS5N00AC5le7DS1E911DJcItV4UTuNQ3rbS3WE3JpKkQjm5mRu2TSJbtOLfSbqkA==}
+    peerDependencies:
+      graphql: ^16
+      react: ^18
+      react-dom: ^18
+
+  '@fabrix-framework/fabrix@0.1.1-preview.1':
+    resolution: {integrity: sha512-DmuybSE4TkyY6Ty1Ea8/KfRDIYExt3MoztJWjPrVQc2IwDhnjEiKpAdidYIDAMSwN5zMfVjCtz1h8H+dTmE6iA==}
     peerDependencies:
       graphql: ^16
       react: ^18
@@ -5649,6 +5656,20 @@ snapshots:
       - supports-color
 
   '@fabrix-framework/fabrix@0.1.1-preview.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      deepmerge-ts: 7.1.0
+      graphql: 16.9.0
+      graphql-tag: 2.12.6(graphql@16.9.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-hook-form: 7.53.0(react@18.3.1)
+      urql: 4.1.0(@urql/core@5.0.6(graphql@16.9.0))(react@18.3.1)
+      wonka: 6.3.4
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - '@urql/core'
+
+  '@fabrix-framework/fabrix@0.1.1-preview.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       deepmerge-ts: 7.1.0
       graphql: 16.9.0
