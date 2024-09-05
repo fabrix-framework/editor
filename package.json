@@ -16,7 +16,7 @@
     "@emotion/css": "^11.13.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@fabrix-framework/chakra-ui": "0.1.1-preview.1",
+    "@fabrix-framework/chakra-ui": "0.1.1-preview.2",
     "@fabrix-framework/fabrix": "0.1.1-preview.0",
     "@fabrix-framework/graphql-config": "0.1.0",
     "@graphiql/plugin-explorer": "^3.2.2",
