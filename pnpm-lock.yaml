@@ -30,8 +30,8 @@ importers:
         version: 0.1.1-preview.1(zjfasndjpwxvesy6j3swbgtdzi)
 >>>>>>> 0f171e1 (Use preview version of ImagePreview)
       '@fabrix-framework/fabrix':
-        specifier: 0.1.0
-        version: 0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.1.1-preview.0
+        version: 0.1.1-preview.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@fabrix-framework/graphql-config':
         specifier: 0.1.0
         version: 0.1.0
@@ -979,6 +979,13 @@ packages:
 
   '@fabrix-framework/fabrix@0.1.0':
     resolution: {integrity: sha512-dn8KtDYWGzOVU805/RB9Xl4uaZsqpmxg5khrLiGYDOBHhylIgaNzFRjq6IaThbGeRbCe+6HQZkbsZrhjIaZhMA==}
+    peerDependencies:
+      graphql: ^16
+      react: ^18
+      react-dom: ^18
+
+  '@fabrix-framework/fabrix@0.1.1-preview.0':
+    resolution: {integrity: sha512-82UhNhsfT3P3gOVMPAgI5uTS5N00AC5le7DS1E911DJcItV4UTuNQ3rbS3WE3JpKkQjm5mRu2TSJbtOLfSbqkA==}
     peerDependencies:
       graphql: ^16
       react: ^18
@@ -5667,6 +5674,20 @@ snapshots:
       graphql: 16.9.0
       graphql-tag: 2.12.6(graphql@16.9.0)
       jsonpath-plus: 9.0.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-hook-form: 7.53.0(react@18.3.1)
+      urql: 4.1.0(@urql/core@5.0.6(graphql@16.9.0))(react@18.3.1)
+      wonka: 6.3.4
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - '@urql/core'
+
+  '@fabrix-framework/fabrix@0.1.1-preview.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      deepmerge-ts: 7.1.0
+      graphql: 16.9.0
+      graphql-tag: 2.12.6(graphql@16.9.0)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-hook-form: 7.53.0(react@18.3.1)
