@@ -20,6 +20,15 @@ importers:
       '@emotion/styled':
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
+      '@fabrix-framework/chakra-ui':
+        specifier: 0.1.0
+        version: 0.1.0(zjfasndjpwxvesy6j3swbgtdzi)
+      '@fabrix-framework/fabrix':
+        specifier: 0.1.0
+        version: 0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@fabrix-framework/graphql-config':
+        specifier: 0.1.0
+        version: 0.1.0
       '@graphiql/plugin-explorer':
         specifier: ^3.2.2
         version: 3.2.2(@graphiql/react@0.26.2(@codemirror/language@6.0.0)(@types/node@22.5.3)(@types/react-dom@18.3.0)(@types/react@18.3.5)(graphql-ws@5.12.1(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -93,18 +102,6 @@ importers:
         specifier: ^3.23.8
         version: 3.23.8
     devDependencies:
-      '@fabrix-framework/chakra-ui':
-        specifier: 0.1.0
-        version: 0.1.0(zjfasndjpwxvesy6j3swbgtdzi)
-      '@fabrix-framework/fabrix':
-        specifier: 0.1.0
-        version: 0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@fabrix-framework/graphql-config':
-        specifier: 0.1.0
-        version: 0.1.0
-      '@faker-js/faker':
-        specifier: ^8.4.1
-        version: 8.4.1
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.5
@@ -129,9 +126,6 @@ importers:
       vite:
         specifier: ^5.3.4
         version: 5.4.3(@types/node@22.5.3)(terser@5.31.6)
-      vite-plugin-graphql-loader:
-        specifier: ^4.0.2
-        version: 4.0.4
       vite-plugin-node-polyfills:
         specifier: ^0.22.0
         version: 0.22.0(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.3)(terser@5.31.6))
@@ -986,10 +980,6 @@ packages:
 
   '@fabrix-framework/graphql-config@0.1.0':
     resolution: {integrity: sha512-kg7eW0lDWm1MGy4sVsLM9gEkzdEVoyPtlQkD3xe21atGs5qLICgfDhZaSxmw3VmoFBIAZ+Y0AsticwSrMNX0ow==}
-
-  '@faker-js/faker@8.4.1':
-    resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
 
   '@floating-ui/core@1.6.7':
     resolution: {integrity: sha512-yDzVT/Lm101nQ5TCVeK65LtdN7Tj4Qpr9RTXJ2vPFLqtLxwOrpoxAHAJI8J3yYWUc40J0BDBheaitK5SJmno2g==}
@@ -4385,9 +4375,6 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite-plugin-graphql-loader@4.0.4:
-    resolution: {integrity: sha512-lYnpQ2luV2fcuXmOJADljuktfMbDW00Y+6QS+Ek8Jz1Vdzlj/51LSGJwZqyjJ24a5YQ+o29Hr6el/5+nlZetvg==}
-
   vite-plugin-node-polyfills@0.22.0:
     resolution: {integrity: sha512-F+G3LjiGbG8QpbH9bZ//GSBr9i1InSTkaulfUHFa9jkLqVGORFBoqc2A/Yu5Mmh1kNAbiAeKeK+6aaQUf3x0JA==}
     peerDependencies:
@@ -5686,8 +5673,6 @@ snapshots:
   '@fabrix-framework/graphql-config@0.1.0':
     dependencies:
       graphql: 16.9.0
-
-  '@faker-js/faker@8.4.1': {}
 
   '@floating-ui/core@1.6.7':
     dependencies:
@@ -9695,12 +9680,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
-
-  vite-plugin-graphql-loader@4.0.4:
-    dependencies:
-      graphql: 16.9.0
-      graphql-tag: 2.12.6(graphql@16.9.0)
-      magic-string: 0.30.11
 
   vite-plugin-node-polyfills@0.22.0(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.3)(terser@5.31.6)):
     dependencies:
