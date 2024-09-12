@@ -21,11 +21,11 @@ importers:
         specifier: ^11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
       '@fabrix-framework/chakra-ui':
-        specifier: 0.1.0
-        version: 0.1.0(zjfasndjpwxvesy6j3swbgtdzi)
+        specifier: 0.1.1
+        version: 0.1.1(zjfasndjpwxvesy6j3swbgtdzi)
       '@fabrix-framework/fabrix':
-        specifier: 0.1.0
-        version: 0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.1.1
+        version: 0.1.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@fabrix-framework/graphql-config':
         specifier: 0.1.0
         version: 0.1.0
@@ -964,15 +964,15 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fabrix-framework/chakra-ui@0.1.0':
-    resolution: {integrity: sha512-yvAOTHPOyN1y+7qR8xbAZ71Wpe5RLm+e7egGPCOYtZhZWYwvYGmVhSc9c4rcqrppi6Dd8RUpMUr+Vj/80YCCdg==}
+  '@fabrix-framework/chakra-ui@0.1.1':
+    resolution: {integrity: sha512-f+Z3oKPsQUvwcvUk76FE5vzgALqX8J1+nj/vDgz0lTB/Qg8dDRvrjMpzmu9gKPVQK85SVkT+jLBNXC4ezN7BvA==}
     peerDependencies:
       '@chakra-ui/react': ^2
       react: ^18
       react-dom: ^18
 
-  '@fabrix-framework/fabrix@0.1.0':
-    resolution: {integrity: sha512-dn8KtDYWGzOVU805/RB9Xl4uaZsqpmxg5khrLiGYDOBHhylIgaNzFRjq6IaThbGeRbCe+6HQZkbsZrhjIaZhMA==}
+  '@fabrix-framework/fabrix@0.1.1':
+    resolution: {integrity: sha512-vI6Qml/r3Q7HbN+FeuXse/fakYFRtaZ91OLYDxTAxOUnNF/uMUmv/XOG0XyPBXrjSpqMKTQXij551dQFnOEycQ==}
     peerDependencies:
       graphql: ^16
       react: ^18
@@ -1162,18 +1162,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
-
-  '@jsep-plugin/assignment@1.2.1':
-    resolution: {integrity: sha512-gaHqbubTi29aZpVbBlECRpmdia+L5/lh2BwtIJTmtxdbecEyyX/ejAOg7eQDGNvGOUmPY7Z2Yxdy9ioyH/VJeA==}
-    engines: {node: '>= 10.16.0'}
-    peerDependencies:
-      jsep: ^0.4.0||^1.0.0
-
-  '@jsep-plugin/regex@1.0.3':
-    resolution: {integrity: sha512-XfZgry4DwEZvSFtS/6Y+R48D7qJYJK6R9/yJFyUFHCIUMEEHuJ4X95TDgJp5QkmzfLYvapMPzskV5HpIDrREug==}
-    engines: {node: '>= 10.16.0'}
-    peerDependencies:
-      jsep: ^0.4.0||^1.0.0
 
   '@lezer/common@1.2.1':
     resolution: {integrity: sha512-yemX0ZD2xS/73llMZIK6KplkjIjf2EvAHcinDi/TfJ9hS25G0388+ClHt6/3but0oOxinTcQHJLDXh6w1crzFQ==}
@@ -3264,10 +3252,6 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsep@1.3.9:
-    resolution: {integrity: sha512-i1rBX5N7VPl0eYb6+mHNp52sEuaS2Wi8CDYx1X5sn9naevL78+265XJqy1qENEk7mRKwS06NHpUqiBwR7qeodw==}
-    engines: {node: '>= 10.16.0'}
-
   jsesc@2.5.2:
     resolution: {integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==}
     engines: {node: '>=4'}
@@ -3292,11 +3276,6 @@ packages:
   json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
-    hasBin: true
-
-  jsonpath-plus@9.0.0:
-    resolution: {integrity: sha512-bqE77VIDStrOTV/czspZhTn+o27Xx9ZJRGVkdVShEtPoqsIx5yALv3lWVU6y+PqYvWPJNWE7ORCQheQkEe0DDA==}
-    engines: {node: '>=14.0.0'}
     hasBin: true
 
   keyv@4.5.4:
@@ -5626,13 +5605,13 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@fabrix-framework/chakra-ui@0.1.0(zjfasndjpwxvesy6j3swbgtdzi)':
+  '@fabrix-framework/chakra-ui@0.1.1(zjfasndjpwxvesy6j3swbgtdzi)':
     dependencies:
       '@chakra-ui/react': 2.8.2(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(framer-motion@11.5.0(@emotion/is-prop-valid@1.3.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emotion/css': 11.13.0
       '@emotion/react': 11.13.3(@types/react@18.3.5)(react@18.3.1)
       '@emotion/styled': 11.13.0(@emotion/react@11.13.3(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react@18.3.1)
-      '@fabrix-framework/fabrix': 0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@fabrix-framework/fabrix': 0.1.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-table': 8.20.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       chakra-react-select: 4.9.1(edh63fc63oc4vkgd2utm4ybp5e)
       chroma-js: 3.0.0
@@ -5655,12 +5634,11 @@ snapshots:
       - graphql
       - supports-color
 
-  '@fabrix-framework/fabrix@0.1.0(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@fabrix-framework/fabrix@0.1.1(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       deepmerge-ts: 7.1.0
       graphql: 16.9.0
       graphql-tag: 2.12.6(graphql@16.9.0)
-      jsonpath-plus: 9.0.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-hook-form: 7.53.0(react@18.3.1)
@@ -5956,14 +5934,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
-
-  '@jsep-plugin/assignment@1.2.1(jsep@1.3.9)':
-    dependencies:
-      jsep: 1.3.9
-
-  '@jsep-plugin/regex@1.0.3(jsep@1.3.9)':
-    dependencies:
-      jsep: 1.3.9
 
   '@lezer/common@1.2.1': {}
 
@@ -8355,8 +8325,6 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsep@1.3.9: {}
-
   jsesc@2.5.2: {}
 
   json-buffer@3.0.1: {}
@@ -8372,12 +8340,6 @@ snapshots:
       minimist: 1.2.8
 
   json5@2.2.3: {}
-
-  jsonpath-plus@9.0.0:
-    dependencies:
-      '@jsep-plugin/assignment': 1.2.1(jsep@1.3.9)
-      '@jsep-plugin/regex': 1.0.3(jsep@1.3.9)
-      jsep: 1.3.9
 
   keyv@4.5.4:
     dependencies:
