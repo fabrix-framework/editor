@@ -115,10 +115,15 @@ const useEditor = () => {
   const [editorQuery, setEditorQuery] = useState("");
   const [parsedQuery, setParsedQuery] = useState<DocumentNode | null>(null);
 
+  const trimComment = (query: string) => {
+    return query.replace(/#.*\n/g, "").trim();
+  }
+
   const updatePreview = useMemo(
     () =>
       R.debounce(
         (query: string) => {
+          query = trimComment(query);
           setEditorQuery(query);
 
           try {
