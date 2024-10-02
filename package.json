@@ -25,7 +25,6 @@
     "@graphql-tools/schema": "^10.0.6",
     "@monaco-editor/react": "^4.6.0",
     "@tanstack/react-table": "^8.19.3",
-    "@urql/exchange-graphcache": "^7.1.2",
     "framer-motion": "^11.3.17",
     "graphiql": "^3.7.0",
     "graphql": "^16.9.0",
@@ -39,10 +38,7 @@
     "react-icons": "^5.2.1",
     "react-markdown": "^9.0.1",
     "remeda": "^2.6.0",
-    "string-to-color": "^2.2.2",
-    "urql": "^4.1.0",
-    "wouter": "^3.3.1",
-    "zod": "^3.23.8"
+    "urql": "^4.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
