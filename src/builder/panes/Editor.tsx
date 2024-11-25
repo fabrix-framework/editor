@@ -97,6 +97,15 @@ export const EditorPane = (props: EditorPaneProps) => {
     }
     props.updatePreview(query);
   };
+  const onEditHeaders = (headers: string) => {
+    try {
+      builderContext.setAdditionalHeader(
+        JSON.parse(headers) as Record<string, string>,
+      );
+    } catch {
+      /* noop */
+    }
+  };
 
   const hasOpenAIToken =
     builderContext.openAIToken && builderContext.openAIToken.length > 0;
@@ -136,6 +145,7 @@ export const EditorPane = (props: EditorPaneProps) => {
                 fetcher={fetcher}
                 disableTabs={true}
                 onEditQuery={onEditQuery}
+                onEditHeaders={onEditHeaders}
                 plugins={[explorer, ...(hasOpenAIToken ? [openAIChat] : [])]}
                 defaultQuery={props.query}
                 schema={builderContext.schema}
