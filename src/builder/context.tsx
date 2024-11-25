@@ -1,6 +1,13 @@
 import { ComponentRegistry, FabrixProvider } from "@fabrix-framework/fabrix";
-import { createContext, useEffect, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { GraphQLSchema } from "graphql";
+import { authExchange } from "@urql/exchange-auth";
 import { schemaDefaultValues, useSchema } from "../hooks/useSchema";
 
 type AppClassNames = {
@@ -16,6 +23,7 @@ type FabrixBuilderContextType = {
   schema: GraphQLSchema | null;
   openAIToken?: string;
   setOpenAIToken: (token: string) => void;
+  setAdditionalHeader: Dispatch<SetStateAction<Record<string, string>>>;
 };
 
 const defaultContextValue: FabrixBuilderContextType = {
@@ -24,6 +32,7 @@ const defaultContextValue: FabrixBuilderContextType = {
   schemaURL: schemaDefaultValues.url,
   setSchemaURL: () => void 0,
   setOpenAIToken: () => void 0,
+  setAdditionalHeader: () => void 0,
 } as const;
 export const FabrixBuilderContext =
   createContext<FabrixBuilderContextType>(defaultContextValue);
@@ -33,11 +42,25 @@ export type FabrixBuilderProviderBaseProps = {
   classNames?: AppClassNames;
 };
 
+const additionalHeaderExchange = (additionalHeader: Record<string, string>) =>
+  authExchange((utils) =>
+    Promise.resolve({
+      addAuthToOperation: (operation) => {
+        return utils.appendHeaders(operation, additionalHeader);
+      },
+      didAuthError: () => false,
+      refreshAuth: () => Promise.resolve(),
+    }),
+  );
+
 export const FabrixBuilderProvider = (
   props: React.PropsWithChildren<FabrixBuilderProviderBaseProps>,
 ) => {
   const [openAIToken, setOpenAIToken] = useState<string | undefined>(undefined);
   const { schema, schemaURL, setSchemaURL, fetchSchema } = useSchema();
+  const [additionalHeader, setAdditionalHeader] = useState<
+    Record<string, string>
+  >({});
 
   useEffect(() => {
     fetchSchema();
@@ -53,12 +76,14 @@ export const FabrixBuilderProvider = (
         classNames: props.classNames,
         openAIToken,
         setOpenAIToken,
+        setAdditionalHeader,
       }}
     >
       <FabrixProvider
         url={schemaURL}
         serverSchema={schemaURL}
         componentRegistry={props.componentRegistry}
+        prependExchanges={[additionalHeaderExchange(additionalHeader)]}
       >
         {props.children}
       </FabrixProvider>

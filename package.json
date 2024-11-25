@@ -25,6 +25,7 @@
     "@graphql-tools/schema": "^10.0.6",
     "@monaco-editor/react": "^4.6.0",
     "@tanstack/react-table": "^8.19.3",
+    "@urql/exchange-auth": "^2.2.0",
     "framer-motion": "^11.3.17",
     "graphiql": "^3.7.0",
     "graphql": "^16.9.0",
