@@ -4,21 +4,20 @@ import {
   Heading,
   Input,
   Button,
-  useDisclosure,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
-  DrawerBody,
   Text,
-  Divider,
   HStack,
 } from "@chakra-ui/react";
 import { DocumentNode, parse } from "graphql";
 import { CombinedError } from "urql";
 import { useContext, useState, useMemo } from "react";
 import * as R from "remeda";
+import {
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerRoot,
+} from "../components/ui/drawer";
 import FabrixIcon from "../icons/logo.svg?react";
 import { FabrixBuilderContext } from "./context";
 import { EditorPane } from "./panes/Editor";
@@ -31,7 +30,7 @@ export const FabrixEditor = () => {
   const [response, setResponse] = useState<
     Record<string, unknown> | CombinedError | undefined
   >();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <Flex height="100vh" width="100%">
@@ -55,20 +54,26 @@ export const FabrixEditor = () => {
                 </Text>
               </HStack>
             </HStack>
-            <Button colorScheme="blue" onClick={onOpen} size="sm">
+            <Button colorScheme="blue" onClick={() => setOpen(true)} size="sm">
               Setting
             </Button>
           </Flex>
         </Stack>
 
         {/* Setting drawer */}
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
-          <DrawerOverlay />
+        <DrawerRoot
+          open={isOpen}
+          placement="end"
+          onOpenChange={(e) => setOpen(e.open)}
+          size="md"
+        >
+          <DrawerBackdrop />
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Setting</DrawerHeader>
+            <DrawerHeader fontSize="lg" fontWeight="bold">
+              Setting
+            </DrawerHeader>
+            <hr />
             <DrawerBody>
-              <Divider />
               <Stack paddingY={7}>
                 <Heading size="sm">Open AI token</Heading>
                 <Text>
@@ -85,7 +90,7 @@ export const FabrixEditor = () => {
               </Stack>
             </DrawerBody>
           </DrawerContent>
-        </Drawer>
+        </DrawerRoot>
 
         {/* Content */}
         <Flex height={"100%"} overflowY="auto">
@@ -117,7 +122,7 @@ const useEditor = () => {
 
   const trimComment = (query: string) => {
     return query.replace(/#.*\n/g, "").trim();
-  }
+  };
 
   const updatePreview = useMemo(
     () =>

@@ -11,6 +11,7 @@ module.exports = tsEslint.config(
       "**/package.json",
       "**/tsconfig.json",
       "**/tsconfig.tsbuildinfo",
+      "src/components/ui/**",
     ],
   },
   eslint.configs.recommended,

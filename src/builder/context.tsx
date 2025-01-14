@@ -81,7 +81,6 @@ export const FabrixBuilderProvider = (
     >
       <FabrixProvider
         url={schemaURL}
-        serverSchema={schemaURL}
         componentRegistry={props.componentRegistry}
         prependExchanges={[additionalHeaderExchange(additionalHeader)]}
       >

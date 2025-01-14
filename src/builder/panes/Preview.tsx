@@ -1,14 +1,4 @@
-import {
-  Alert,
-  AlertIcon,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Text,
-  Box,
-} from "@chakra-ui/react";
+import { Tabs, Text, Flex } from "@chakra-ui/react";
 import { FabrixComponent } from "@fabrix-framework/fabrix";
 import {
   EditorContextProvider,
@@ -20,6 +10,7 @@ import { DocumentNode } from "graphql";
 import { useContext } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { CombinedError } from "urql";
+import { Alert } from "../../components/ui/alert";
 import { FabrixBuilderContext } from "../context";
 import { baseFlexStyle } from "./shared";
 
@@ -34,20 +25,12 @@ export const PreviewPane = (props: {
 
   const showPreview = () => {
     if (error) {
-      return (
-        <Alert status="error">
-          <AlertIcon />
-          Error: {error.message}
-        </Alert>
-      );
+      return <Alert status="error">Error: {error.message}</Alert>;
     } else if (!query) {
       return (
-        <Box>
-          <Alert status="warning">
-            <AlertIcon />
-            <Text>Add your query in the editor first</Text>
-          </Alert>
-        </Box>
+        <Alert status="warning">
+          <Text>Add your query in the editor first</Text>
+        </Alert>
       );
     }
 
@@ -66,27 +49,29 @@ export const PreviewPane = (props: {
   };
 
   return (
-    <Tabs
-      sx={baseFlexStyle}
+    <Tabs.Root
+      css={baseFlexStyle}
       overflowY={"auto"}
-      isLazy
-      isFitted
-      variant="enclosed-colored"
+      variant="outline"
+      defaultValue="preview"
       size="sm"
+      fitted
+      lazyMount
     >
-      <TabList sx={{ bg: "gray.50", borderTop: "transparent" }}>
-        <Tab>Preview</Tab>
-        <Tab>Response</Tab>
-      </TabList>
-      <TabPanels
-        sx={{
+      <Tabs.List css={{ bg: "gray.50", borderTop: "transparent" }}>
+        <Tabs.Trigger value="preview">Preview</Tabs.Trigger>
+        <Tabs.Trigger value="response">Response</Tabs.Trigger>
+      </Tabs.List>
+      <Flex
+        css={{
           ...baseFlexStyle,
           overflowY: "auto",
           borderLeft: "1px solid var(--chakra-colors-chakra-border-color)",
         }}
       >
-        <TabPanel
-          sx={{
+        <Tabs.Content
+          value="preview"
+          css={{
             ...baseFlexStyle,
             margin: 2,
             marginTop: 3,
@@ -94,9 +79,10 @@ export const PreviewPane = (props: {
           }}
         >
           {showPreview()}
-        </TabPanel>
-        <TabPanel
-          sx={{
+        </Tabs.Content>
+        <Tabs.Content
+          value="response"
+          css={{
             ...baseFlexStyle,
             padding: 2,
             paddingTop: 3,
@@ -130,8 +116,8 @@ export const PreviewPane = (props: {
               </div>
             </SchemaContextProvider>
           </EditorContextProvider>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+        </Tabs.Content>
+      </Flex>
+    </Tabs.Root>
   );
 };

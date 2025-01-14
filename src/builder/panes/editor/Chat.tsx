@@ -129,7 +129,7 @@ export const Chat = (props: { updateQuery: (value: string) => void }) => {
 
   return (
     <Box>
-      <VStack spacing={4} align="stretch">
+      <VStack gap={4} align="stretch">
         {messages.map(
           (message, index) =>
             (message.role === "user" || message.role === "assistant") && (
@@ -206,7 +206,12 @@ export const Chat = (props: { updateQuery: (value: string) => void }) => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter your message..."
         />
-        <Button type="submit" mt={2} isLoading={isLoading}>
+        <Button
+          type="submit"
+          mt={2}
+          // @ts-expect-error
+          loading={isLoading}
+        >
           Send
         </Button>
       </form>
