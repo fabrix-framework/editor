@@ -7,7 +7,6 @@ import {
   Text,
   HStack,
 } from "@chakra-ui/react";
-
 import { DocumentNode, parse } from "graphql";
 import { CombinedError } from "urql";
 import { useContext, useState, useMemo } from "react";
