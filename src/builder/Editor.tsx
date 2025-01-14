@@ -69,7 +69,10 @@ export const FabrixEditor = () => {
         >
           <DrawerBackdrop />
           <DrawerContent>
-            <DrawerHeader>Setting</DrawerHeader>
+            <DrawerHeader fontSize="lg" fontWeight="bold">
+              Setting
+            </DrawerHeader>
+            <hr />
             <DrawerBody>
               <Stack paddingY={7}>
                 <Heading size="sm">Open AI token</Heading>
