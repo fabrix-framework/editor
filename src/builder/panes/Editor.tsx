@@ -1,14 +1,4 @@
-import {
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  VStack,
-  InputGroup,
-  InputLeftAddon,
-  Input,
-} from "@chakra-ui/react";
+import { Tabs, VStack, Group, InputAddon, Input, Flex } from "@chakra-ui/react";
 import { useFabrixClient } from "@fabrix-framework/fabrix";
 import { FetcherParams, createGraphiQLFetcher } from "@graphiql/toolkit";
 import GraphiQL from "graphiql";
@@ -111,18 +101,19 @@ export const EditorPane = (props: EditorPaneProps) => {
     builderContext.openAIToken && builderContext.openAIToken.length > 0;
 
   return (
-    <Tabs sx={baseFlexStyle} variant="enclosed-colored" size="sm" isLazy>
-      <TabList sx={{ bg: "gray.50", borderTop: "transparent" }}>
-        <Tab>Editor</Tab>
-      </TabList>
-      <TabPanels
-        sx={{
+    <Tabs.Root css={baseFlexStyle} variant="plain" size="sm" lazyMount>
+      <Tabs.List css={{ bg: "gray.50", borderTop: "transparent" }}>
+        <Tabs.Trigger value="editor">Editor</Tabs.Trigger>
+      </Tabs.List>
+      <Tabs.Content
+        value="editor"
+        css={{
           ...baseFlexStyle,
           height: "calc(100% - 40px)",
         }}
       >
-        <TabPanel
-          sx={{
+        <Flex
+          css={{
             ...baseFlexStyle,
             margin: 2,
             marginTop: 3,
@@ -131,16 +122,17 @@ export const EditorPane = (props: EditorPaneProps) => {
         >
           <ChatProvider schema={builderContext.schema}>
             <VStack flexGrow={1} height={"100%"}>
-              <InputGroup size="sm">
-                <InputLeftAddon>Schema</InputLeftAddon>
+              <Group>
+                <InputAddon>Schema</InputAddon>
                 <Input
+                  size="sm"
                   value={builderContext.schemaURL}
                   onChange={(e) => {
                     builderContext.setSchemaURL(e.target.value);
                     props.updatePreview(props.query);
                   }}
                 />
-              </InputGroup>
+              </Group>
               <GraphiQL
                 fetcher={fetcher}
                 disableTabs={true}
@@ -153,8 +145,8 @@ export const EditorPane = (props: EditorPaneProps) => {
               />
             </VStack>
           </ChatProvider>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+        </Flex>
+      </Tabs.Content>
+    </Tabs.Root>
   );
 };

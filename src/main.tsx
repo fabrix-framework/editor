@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
-import { ChakraProvider } from "@chakra-ui/react";
 import { css } from "@emotion/css";
+import { Provider as ChakraProvider } from "./components/ui/provider.tsx";
 import { ChakraUIRegistry } from "@fabrix-framework/chakra-ui";
 import App from "./App.tsx";
 import "./index.css";
