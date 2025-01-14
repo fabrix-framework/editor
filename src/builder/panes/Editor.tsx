@@ -100,8 +100,6 @@ export const EditorPane = (props: EditorPaneProps) => {
   const hasOpenAIToken =
     builderContext.openAIToken && builderContext.openAIToken.length > 0;
 
-  console.log(builderContext);
-
   return (
     <Tabs.Root
       css={baseFlexStyle}

@@ -98,8 +98,6 @@ export const useSchema = () => {
     }
   }, [debouncedFetchSchema, schema, url]);
 
-  console.log(schema);
-
   return {
     schemaURL: url,
     setSchemaURL: (value: string) => setURL(value),
