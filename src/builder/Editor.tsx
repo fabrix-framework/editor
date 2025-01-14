@@ -7,6 +7,11 @@ import {
   Text,
   HStack,
 } from "@chakra-ui/react";
+
+import { DocumentNode, parse } from "graphql";
+import { CombinedError } from "urql";
+import { useContext, useState, useMemo } from "react";
+import * as R from "remeda";
 import {
   DrawerBackdrop,
   DrawerBody,
@@ -14,10 +19,6 @@ import {
   DrawerHeader,
   DrawerRoot,
 } from "../components/ui/drawer";
-import { DocumentNode, parse } from "graphql";
-import { CombinedError } from "urql";
-import { useContext, useState, useMemo } from "react";
-import * as R from "remeda";
 import FabrixIcon from "../icons/logo.svg?react";
 import { FabrixBuilderContext } from "./context";
 import { EditorPane } from "./panes/Editor";

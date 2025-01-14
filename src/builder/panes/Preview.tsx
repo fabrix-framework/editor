@@ -1,5 +1,4 @@
 import { Tabs, Text, Flex } from "@chakra-ui/react";
-import { Alert } from "../../components/ui/alert";
 import { FabrixComponent } from "@fabrix-framework/fabrix";
 import {
   EditorContextProvider,
@@ -11,6 +10,7 @@ import { DocumentNode } from "graphql";
 import { useContext } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { CombinedError } from "urql";
+import { Alert } from "../../components/ui/alert";
 import { FabrixBuilderContext } from "../context";
 import { baseFlexStyle } from "./shared";
 
