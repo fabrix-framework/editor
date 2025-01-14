@@ -1,4 +1,4 @@
-import { Tabs, VStack, Group, InputAddon, Input, Flex } from "@chakra-ui/react";
+import { Tabs, VStack, Group, InputAddon, Input } from "@chakra-ui/react";
 import { useFabrixClient } from "@fabrix-framework/fabrix";
 import { FetcherParams, createGraphiQLFetcher } from "@graphiql/toolkit";
 import GraphiQL from "graphiql";
@@ -101,7 +101,13 @@ export const EditorPane = (props: EditorPaneProps) => {
     builderContext.openAIToken && builderContext.openAIToken.length > 0;
 
   return (
-    <Tabs.Root css={baseFlexStyle} variant="plain" size="sm" lazyMount>
+    <Tabs.Root
+      css={baseFlexStyle}
+      variant="outline"
+      size="sm"
+      defaultValue="editor"
+      lazyMount
+    >
       <Tabs.List css={{ bg: "gray.50", borderTop: "transparent" }}>
         <Tabs.Trigger value="editor">Editor</Tabs.Trigger>
       </Tabs.List>
@@ -112,40 +118,45 @@ export const EditorPane = (props: EditorPaneProps) => {
           height: "calc(100% - 40px)",
         }}
       >
-        <Flex
-          css={{
-            ...baseFlexStyle,
-            margin: 2,
-            marginTop: 3,
-            padding: 0,
-          }}
-        >
-          <ChatProvider schema={builderContext.schema}>
-            <VStack flexGrow={1} height={"100%"}>
-              <Group>
-                <InputAddon>Schema</InputAddon>
-                <Input
-                  size="sm"
-                  value={builderContext.schemaURL}
-                  onChange={(e) => {
-                    builderContext.setSchemaURL(e.target.value);
-                    props.updatePreview(props.query);
-                  }}
-                />
-              </Group>
-              <GraphiQL
-                fetcher={fetcher}
-                disableTabs={true}
-                onEditQuery={onEditQuery}
-                onEditHeaders={onEditHeaders}
-                plugins={[explorer, ...(hasOpenAIToken ? [openAIChat] : [])]}
-                defaultQuery={props.query}
-                schema={builderContext.schema}
-                defaultTheme={"light"}
+        <ChatProvider schema={builderContext.schema}>
+          <VStack flexGrow={1} height={"100%"}>
+            <Group
+              attached
+              css={{
+                width: "100%",
+              }}
+            >
+              <InputAddon
+                style={{
+                  borderRadius: 0,
+                }}
+              >
+                Schema
+              </InputAddon>
+              <Input
+                size="sm"
+                style={{
+                  borderRadius: 0,
+                }}
+                value={builderContext.schemaURL}
+                onChange={(e) => {
+                  builderContext.setSchemaURL(e.target.value);
+                  props.updatePreview(props.query);
+                }}
               />
-            </VStack>
-          </ChatProvider>
-        </Flex>
+            </Group>
+            <GraphiQL
+              fetcher={fetcher}
+              disableTabs={true}
+              onEditQuery={onEditQuery}
+              onEditHeaders={onEditHeaders}
+              plugins={[explorer, ...(hasOpenAIToken ? [openAIChat] : [])]}
+              defaultQuery={props.query}
+              schema={builderContext.schema}
+              defaultTheme={"light"}
+            />
+          </VStack>
+        </ChatProvider>
       </Tabs.Content>
     </Tabs.Root>
   );

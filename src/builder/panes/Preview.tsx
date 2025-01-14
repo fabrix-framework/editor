@@ -52,7 +52,8 @@ export const PreviewPane = (props: {
     <Tabs.Root
       css={baseFlexStyle}
       overflowY={"auto"}
-      variant="plain"
+      variant="outline"
+      defaultValue="preview"
       size="sm"
       fitted
       lazyMount
