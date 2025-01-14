@@ -6,7 +6,7 @@ import {
 } from "graphql";
 import { mergeSchemas } from "@graphql-tools/schema";
 import { buildASTSchema } from "graphql";
-import { schemaDefinition } from "@fabrix-framework/graphql-config/schema";
+import { schemaDefinition } from "@fabrix-framework/graphql-config";
 import { useCallback, useMemo, useState } from "react";
 import * as R from "remeda";
 
@@ -97,6 +97,8 @@ export const useSchema = () => {
       await debouncedFetchSchema.call(url);
     }
   }, [debouncedFetchSchema, schema, url]);
+
+  console.log(schema);
 
   return {
     schemaURL: url,
